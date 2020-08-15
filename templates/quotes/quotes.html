@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    
+    {% if error %}
+        <h4>Please enter a valid stock name</h4>
+    {% elif ticker %}
+        <h4>Enter a stock name to see the details</h4>
+    {% elif api%}
+        {% for key, val in api.items %}
+        <p>{{key}} : {{val}}</p><br>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
+    
